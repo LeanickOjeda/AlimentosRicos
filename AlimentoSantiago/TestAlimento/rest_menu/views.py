@@ -19,10 +19,11 @@ def lista_menu(request):
         serializer = MenuSerializer(menu, many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
-        form = MenuForm(request.POST)
-        if form.is_valid():
-            form.save()
-
+        data = JSONParser().parse(request)
+        serializer = MenuSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
