@@ -5,6 +5,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
+from core.forms import MenuForm
 from core.models import MenuSemana
 from .serializers import MenuSerializer
 @csrf_exempt
@@ -18,11 +19,10 @@ def lista_menu(request):
         serializer = MenuSerializer(menu, many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
-        data = JSONParser().parse(request)
-        serializer = MenuSerializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        form = MenuForm(request.POST)
+        if form.is_valid():
+            form.save()
+
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
