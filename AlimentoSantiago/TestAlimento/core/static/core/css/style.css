@@ -1,0 +1,31 @@
+
+.fondo{/*[Fondo para la pagina]*/
+    background-color: rgb(204, 74, 74);
+}
+
+.fondonavbar{/*[Fondo para la barra de navegación]*/
+    background-color: rgb(139, 49, 49);
+}
+
+.piepagina{/*[PIE DE PAGINA NO TOCAR]*/
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: rgb(204, 74, 74);
+}
+.Copyright{/*[PIE DE PAGINA NO TOCAR]*/
+      height: 30px;
+      margin: 0px;
+      padding: 0px;
+  } 
+
+
+
+
+
+
+
+
+
+
+
+

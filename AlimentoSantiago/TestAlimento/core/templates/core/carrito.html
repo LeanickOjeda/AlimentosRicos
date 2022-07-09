@@ -1,0 +1,253 @@
+{% load static %}
+  <!doctype html>
+  <html lang="es">
+    <head>
+      <title>Santiago Alimentos</title>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="{% static 'core/css/style.css' %}"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        
+      <nav class="navbar navbar-expand-lg navbar-light container">
+        <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'core/img/iconos/logo_transparent.png' %}" width="190"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'index' %}">Inicio<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'repartidores' %}">Repartidores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'menusemanal' %}">Menu Semanal</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nuestros Platillos</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'Principales' %}">Platillos Principales</a>
+                <a class="dropdown-item" href="{% url 'Sopas' %}">Sopas y Caldillos</a>
+                <a class="dropdown-item" href="{% url 'Mariscos' %}">Mariscos</a>
+                <a class="dropdown-item" href="{% url 'Postres' %}">Postres y Helados</a>
+                <a class="dropdown-item" href="{% url 'Internacional' %}">Gastronomía Internacional</a>
+                <a class="dropdown-item" href="{% url 'PlatilloDia' %}">Platillos del Dia</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'Ensalada' %}">Ensaladas</a>
+                <a class="dropdown-item" href="{% url 'Veganos' %}">Platillos Veganos</a>
+              </div>
+            </li>
+            <li>
+              <div class="container text-right align-items-center">
+                <a href="{% url 'carrito' %}"><img src="{% static 'core/img/iconos/carritocompra.png' %}" width="35"></a>(3)-$24.990
+              </div>
+            </li>
+          </ul>
+          <div class="form-inline my-2 my-lg-0">
+            <!--ACA VA A IR EL NOMBRE DEL USUARIO SACADO DE LA BASE DE DATOS PREVIO INICIO DE SESION-->
+            <a href="{% url 'login' %}"><img src="{% static 'core/img/iconos/usuario.png' %}" alt=""></a>
+          </div>
+        </div>
+      </nav>
+      <hr>
+  
+ 
+      <!--INICIO DEL CARRITO-->
+
+<div class="container">
+    <div class="row">
+  
+        <div class="col-sm-8">
+            <div class="product-details mr-2">
+                <h2>Carrito de compras</h2>
+                  <hr>
+                <h6 class="mb-0">
+                  Mi Carrito
+                </h6>
+                <div class="d-flex justify-content-between">
+                    <p>Tienes 3 articulos en tu carrito de compras</p>
+                </div>
+  
+                <div class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded">
+                    <div class="d-flex flex-row"><img class="rounded" src="{% static 'core/img/platillos/bajativo3.jfif' %}" width="50">
+                        <div class="ml-2">
+                          <span class="font-weight-bold d-block">Margarita de Mango</span>
+                          <span class="spec">Cocktail de mango 300cc</span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center">
+                      <span class="d-block">Cantidad: 2</span>
+                      <span class="d-block ml-5 font-weight-bold">$9.990</span>
+                      <i class="fa fa-trash-o ml-3 text-black-50"></i>
+                    </div>
+                </div>
+  
+  
+                <div class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded">
+                    <div class="d-flex flex-row"><img class="rounded" src="{% static 'core/img/platillos/chorrillana.jpg' %}" width="50">
+                        <div class="ml-2">
+                          <span class="font-weight-bold d-block">Chorrillana Chilena</span>
+                          <span class="spec">Chorrillana completa (sin cebolla)</span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center">
+                      <span class="d-block">Cantidad: 2</span>
+                      <span class="d-block ml-5 font-weight-bold">$7.100</span>
+                      <i class="fa fa-trash-o ml-3 text-black-50"></i>
+                    </div>
+                </div>
+  
+  
+                <div class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded">
+                    <div class="d-flex flex-row">
+                      <img class="rounded" src="{% static 'core/img/platillos/mari5.jfif' %}" width="50">
+                      <div class="ml-2">
+                        <span class="font-weight-bold d-block">Ensalada de Mariscos</span>
+                        <span class="spec">Ensalada de mariscos con mayonesa casera.</span>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center">
+                      <span class="d-block">Cantidad: 1</span>
+                      <span class="d-block ml-5 font-weight-bold">$4.990</span>
+                      <i class="fa fa-trash-o ml-3 text-black-50"></i>
+                    </div>
+                </div>
+              </div>
+           </div>
+  
+  
+  
+  
+  
+        <!--SESSION DE COMPRA TARGETAS Y FORMAS DE PAGO-->
+        <div class="col-sm-4">
+            <div class="payment-info">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span><h5>Formas de Pago</h5></span>
+                  <img class="rounded" src="{% static 'core/img/iconos/logo_transparent.png' %}" width="50">
+                </div>
+  
+                <label class="radio"> 
+                  <input type="radio" name="card" value="payment" checked>
+                  <span><img width="50" src="{% static 'core/img/iconos/pay-master.png' %}"/></span> 
+                </label>
+  
+                <label class="radio"> 
+                  <input type="radio" name="card" value="payment"> 
+                  <span><img width="50" src="{% static 'core/img/iconos/pay-visa.png' %}"/></span> 
+                </label>
+  
+                <label class="radio"> 
+                  <input type="radio" name="card" value="payment"> 
+                  <span><img width="50" src="{% static 'core/img/iconos/pay-webpay.png' %}"/></span> 
+                </label>
+  
+                <label class="radio"> 
+                  <input type="radio" name="card" value="payment"> 
+                  <span><img width="50" src="{% static 'core/img/iconos/pay-khipu' %}"/></span> 
+                </label>
+                
+  
+                <!--RELLENO DE LA TARGETA O FORMA DE PAGO-->
+                <div>
+                  <label class="credit-card-label">Nombre Titular Targeta</label>
+                  <input type="text" class="form-control credit-inputs" placeholder="Nombre">
+                </div>
+  
+                <div>
+                  <label class="credit-card-label">Numero de Targeta</label>
+                  <input type="text" class="form-control credit-inputs" placeholder="0000 0000 0000 0000">
+                </div>
+  
+                <div class="row">
+                    <div class="col-md-6"><label class="credit-card-label">Fecha</label><input type="text" class="form-control credit-inputs" placeholder="12/24"></div>
+                    <div class="col-md-6"><label class="credit-card-label">CVV</label><input type="text" class="form-control credit-inputs" placeholder="342"></div>
+                </div>
+  
+                <hr>
+                <div class="d-flex justify-content-between information"><span>Subtotal</span><span>$22.990</span></div>
+                <div class="d-flex justify-content-between information"><span>Envio</span><span>$2.000</span></div>
+                <div class="d-flex justify-content-between information"><span>Total</span><span>$24.990</span></div>
+                
+  
+                <a href="{% url 'pagoapropiado' %}">
+                  <button class="btn btn-success btn-block d-flex justify-content-between mt-3" type="button">
+                    <span><center>$24.990</center></span>
+                    <span>Pagar
+                      <i class="fa fa-long-arrow-right ml-1"></i>
+                    </span>
+                  </button>
+                </a>
+  
+              </div>
+        </div>
+    </div>
+  </div>
+  
+  
+  <!--FIN DEL CARRITO-->
+      
+  
+        
+      <hr>
+      <!-- PIE DE PAGINA -->
+      <footer class="piepagina">
+        <div class="container-fluid text-center">
+          <div class="row text-white alto align-items-center ">
+            <div class="col-sm-2">
+              <!--ESPACIO-->
+            </div>
+  
+            <div class="col-sm-2">
+              <img src="{% static 'core/img/iconos/logo_transparent.png' %}" width="300">
+            <p class="py-5">Restaurante Especializado en Gastronomía Chilena con envió a domicilio y empresas.</p>
+            </div>
+      
+            <div class="col-sm-2">
+              <h5 class="py-5">Información</h5>
+              <p class="colorchange">Quienes Somos</p>
+              <p class="colorchange">Términos y condiciones</p>
+              <p class="colorchange">Política de reembolso</p>
+            </div>
+      
+            <div class="col-sm-2">
+              <h5 class="py-5">Nuestros Productos</h5>
+              <p class="colorchange">Platillos Principales</p>
+              <p class="colorchange">Sopas y Mariscos</p>
+              <p class="colorchange">Postres y Bajativos</p>
+              <p class="colorchange">Ensaladas</p>
+            </div>
+      
+            <div class="col-sm-2">
+              <h5 class="py-5">Contáctanos</h5>
+              <a href="https://www.instagram.com/"><img src="{% static 'core/img/iconos/instagram.png' %}" width="50"></a>
+              <a href="https://www.whatsapp.com/?lang=es"><img src="{% static 'core/img/iconos/whatsapp.png' %}" width="50"></a>
+              <a href="contacto.html"><img src="{% static 'core/img/iconos/CorreoIcono.png' %}" width="55"></a>
+            </div>
+  
+            <div class="col-sm-2">
+              <!--ESPACIO-->
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+          <!-- PIE DE PAGINA (COPRYRIGHT) -->
+          <div class="container-fluid bg-dark align-items-center text-center text-white Copyright ">
+            <div class="row align-items-center">
+              <div class="col-12">
+                <p>© Copyright - Todos los derechos reservados para Santiago Alimentos</p>
+              </div>
+            </div>
+          </div>
+  
+      <!-- FINAL DE LA PAGINA -->      
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+  </html>  

@@ -1,0 +1,291 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light container">
+        <a class="navbar-brand" href="index.html"><img src="{% static 'core/img/iconos/logo_transparent.png' %}" width="190"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'index' %}">Inicio<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'repartidores' %}">Repartidores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'menusemanal' %}">Menu Semanal</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nuestros Platillos</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'Principales' %}">Platillos Principales</a>
+                <a class="dropdown-item" href="{% url 'Sopas' %}">Sopas y Caldillos</a>
+                <a class="dropdown-item" href="{% url 'Mariscos' %}">Mariscos</a>
+                <a class="dropdown-item" href="{% url 'Postres' %}">Postres y Helados</a>
+                <a class="dropdown-item" href="{% url 'Internacional' %}">Gastronomía Internacional</a>
+                <a class="dropdown-item" href="{% url 'PlatilloDia' %}">Platillos del Dia</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'Ensalada' %}">Ensaladas</a>
+                <a class="dropdown-item" href="{% url 'Veganos' %}">Platillos Veganos</a>
+              </div>
+            </li>
+            <li>
+              <div class="container text-right align-items-center">
+                <a href="{% url 'carrito' %}"><img src="{% static 'core/img/iconos/carritocompra.png' %}" width="35"></a>(3)-$24.990
+              </div>
+            </li>
+          </ul>
+          <div class="form-inline my-2 my-lg-0">
+            <!--ACA VA A IR EL NOMBRE DEL USUARIO SACADO DE LA BASE DE DATOS PREVIO INICIO DE SESION-->
+            <a href="{% url 'login' %}"><img src="{% static 'core/img/iconos/usuario.png' %}" alt=""></a>
+          </div>
+        </div>
+      </nav>
+  
+  <hr>
+  
+      <!-- CARRUSEL EN PROCESO... -->
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a href="Catalogos/Internacional.html"><img class="d-block w-100" src="{% static 'core/img/platillos/carrusel/baner3.jpg' %}" alt="BANNER-Oferta-1"></a>
+          </div>
+  
+          <div class="carousel-item">
+            <a href="Catalogos/Ensaladas.html"><img class="d-block w-100" src="{% static 'core/img/PlatillosPrincipal.jpg' %}" alt="BANNER-Oferta-2"></a>
+          </div>
+  
+          <div class="carousel-item">
+            <a href="Catalogos/PlatillosPrincipales.html"><img class="d-block w-100" src="{% static 'core/img/platillos/carrusel/hamburger2.jpg' %}" alt="BANNER-Oferta-3"></a>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Siguiente</span>
+        </a>
+      </div>
+      <!-- FIN CARRUSEL EN PROCESO... -->
+  
+    <hr>
+    <hr>
+    <hr>
+    <div class="container text-center fondo text-white">
+      <div class="row">
+          <div class="col-12">
+              <h1>Platillos mas vendidos</h1>
+          </div>
+      </div>
+    </div>
+    <div class="container text-center">
+        <div class="row align-items-center">
+    
+            <div class="col-sm-4 text-capitalize pt-4">
+                <h4>Lasaña Italiana</h4>
+                <a href="########"><img src="{% static 'core/img/platillos/lasaña.jpg' %}" width="300" height="200"></a>
+                <h3 class="pt-5">$4.500</h3>
+                <a href="fichacomponentes.html"><button type="button" class="btn btn-info btn-lg btn-block">Comprar</button></a>
+                <p>La receta original</p>
+                <a href="########">Mas detalles</a>
+            </div>
+    
+            <div class="col-sm-4 text-capitalize pt-4">
+                <h4>Margarita de Mango</h4>
+                <a href="########"><img src="{% static 'core/img/platillos/bajativo3.jfif' %}" width="300" height="200"></a>
+                <h3 class="pt-5">$2.300</h3>
+                <a href="fichacomponentes.html"><button type="button" class="btn btn-info btn-lg btn-block">Comprar</button></a>
+                <p>Para quedar bien postre</p>
+                <a href="########">Mas detalles</a>
+            </div>
+    
+            <div class="col-sm-4 text-capitalize pt-4">
+                <h4>Ramen Tradicional</h4>
+                <a href="########"><img src="{% static 'core/img/platillos/ramen.jfif' %}" width="300" height="200"></a>
+                <h3 class="pt-5">$4.400</h3>
+                <a href="fichacomponentes.html"><button type="button" class="btn btn-info btn-lg btn-block">Comprar</button></a>
+                <p>Sopa tradicional Japonesa</p>
+                <a href="########">Mas detalles</a>
+            </div>  
+        </div>  
+      </div> 
+  
+      <hr>
+      <hr>
+      
+  
+    <div class="container text-center fondo text-white">
+      <div class="row">
+          <div class="col-12">
+              <h1>Platillos del Día</h1>
+          </div>
+      </div>
+    </div>
+    <div class="container text-center">
+        <div class="row align-items-center">
+    
+            <div class="col-sm-4 text-capitalize pt-4">
+                <h4>Caldillo de Congrio</h4>
+                <a href="########"><img src="{% static 'core/img/platillos/casuela.jpg' %}" width="300" height="200"></a>
+                <h3 class="pt-5">$3.500</h3>
+                <a href="fichacomponentes.html"><button type="button" class="btn btn-info btn-lg btn-block">Comprar</button></a>
+                <p>La receta original</p>
+                <a href="########">Mas detalles</a>
+            </div>
+    
+            <div class="col-sm-4 text-capitalize pt-4">
+                <h4>Charquican</h4>
+                <a href="########"><img src="{% static 'core/img/platillos/charquican.jpg' %}" width="300" height="200"></a>
+                <h3 class="pt-5">$3.500</h3>
+                <a href="fichacomponentes.html"><button type="button" class="btn btn-info btn-lg btn-block">Comprar</button></a>
+                <p>El mejor charquican del lugar</p>
+                <a href="########">Mas detalles</a>
+            </div>
+    
+            <div class="col-sm-4 text-capitalize pt-4">
+                <h4>Ramen Shi</h4>
+                <a href="########"><img src="{% static 'core/img/platillos/ramenshi.jpg' %}" width="300" height="200"></a>
+                <h3 class="pt-5">$4.900</h3>
+                <a href="fichacomponentes.html"><button type="button" class="btn btn-info btn-lg btn-block">Comprar</button></a>
+                <p>Sopa tradicional Japonesa</p>
+                <a href="########">Mas detalles</a>
+            </div>  
+        </div>  
+      </div>
+  
+      <hr>
+      <hr>
+  
+      <div class="container text-center fondo text-white">
+        <div class="row">
+            <div class="col-12">
+                <h1>Top Ensaladas</h1>
+            </div>
+        </div>
+      </div>
+      <div class="container text-center">
+          <div class="row align-items-center">
+      
+              <div class="col-sm-4 text-capitalize pt-4">
+                  <h4>Tomate con Cebolla</h4>
+                  <a href="########"><img src="{% static 'core/img/platillos/ensala4.jfif' %}" width="300" height="200"></a>
+                  <h3 class="pt-5">$3.500</h3>
+                  <a href="fichacomponentes.html"><button type="button" class="btn btn-info btn-lg btn-block">Comprar</button></a>
+                  <p>La receta original</p>
+                  <a href="########">Mas detalles</a>
+              </div>
+      
+              <div class="col-sm-4 text-capitalize pt-4">
+                  <h4>Papas Mayo</h4>
+                  <a href="########"><img src="{% static 'core/img/platillos/papamayo.jfif' %}" width="300" height="200"></a>
+                  <h3 class="pt-5">$3.500</h3>
+                  <a href="fichacomponentes.html"><button type="button" class="btn btn-info btn-lg btn-block">Comprar</button></a>
+                  <p>El mejor charquican del lugar</p>
+                  <a href="########">Mas detalles</a>
+              </div>
+      
+              <div class="col-sm-4 text-capitalize pt-4">
+                  <h4>Ensalada de Tofu</h4>
+                  <a href="########"><img src="{% static 'core/img/platillos/vegan4.jfif' %}" width="300" height="200"></a>
+                  <h3 class="pt-5">$4.900</h3>
+                  <a href="fichacomponentes.html"><button type="button" class="btn btn-info btn-lg btn-block">Comprar</button></a>
+                  <p>Sopa tradicional Japonesa</p>
+                  <a href="########">Mas detalles</a>
+              </div>  
+          </div>  
+        </div>
+  
+        <hr>
+        <hr>
+  
+        <div class="container">
+          <div class="row align-items-center text-center">
+            <div class="col-sm-12 pt-3">
+              <img src="{% static 'core/img/BANER.png' %}" width="900" height="350">
+            </div>
+          </div>
+        </div>
+  
+        <hr>
+        <hr>
+      
+      <!-- PIE DE PAGINA -->
+      <footer class="piepagina">
+        <div class="container-fluid text-center">
+          <div class="row text-white alto align-items-center ">
+            <div class="col-sm-2">
+              <!--ESPACIO-->
+            </div>
+  
+            <div class="col-sm-2">
+              <img src="{% static 'core/img/iconos/logo_transparent.png' %}" width="300">
+            <p class="py-5">Restaurante Especializado en Gastronomía Chilena con envió a domicilio y empresas.</p>
+            </div>
+      
+            <div class="col-sm-2">
+              <h5 class="py-5">Información</h5>
+              <p class="colorchange">Quienes Somos</p>
+              <p class="colorchange">Términos y condiciones</p>
+              <p class="colorchange">Política de reembolso</p>
+            </div>
+      
+            <div class="col-sm-2">
+              <h5 class="py-5">Nuestros Productos</h5>
+              <p class="colorchange">Platillos Principales</p>
+              <p class="colorchange">Sopas y Mariscos</p>
+              <p class="colorchange">Postres y Bajativos</p>
+              <p class="colorchange">Ensaladas</p>
+            </div>
+      
+            <div class="col-sm-2">
+              <h5 class="py-5">Contáctanos</h5>
+              <a href="https://www.instagram.com/"><img src="{% static 'core/img/iconos/instagram.png' %}" width="50"></a>
+              <a href="https://www.whatsapp.com/?lang=es"><img src="{% static 'core/img/iconos/whatsapp.png' %}" width="50"></a>
+              <a href="contacto.html"><img src="{% static 'core/img/iconos/CorreoIcono.png' %}" width="55"></a>
+            </div>
+  
+            <div class="col-sm-2">
+              <!--ESPACIO-->
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+          <!-- PIE DE PAGINA (COPRYRIGHT) -->
+          <div class="container-fluid bg-dark align-items-center text-center text-white Copyright ">
+            <div class="row align-items-center">
+              <div class="col-12">
+                <p>© Copyright - Todos los derechos reservados para Santiago Alimentos</p>
+              </div>
+            </div>
+          </div>
+  
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
